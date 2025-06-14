@@ -60,9 +60,7 @@ We recommend using the **Anaconda Distribution** of Python, as it simplifies pac
     ├── Doxy_PEP_Analysis_Visualization_0612.py
     ├── Doxy_PEP_Ana_Vis_functions_0612.py
     ├── Data_tobe_called/
-    │   └── Best_params_sets.pkl
     └── Data_output/
-        └── All_params_results.pkl
     ```
 
 ***
