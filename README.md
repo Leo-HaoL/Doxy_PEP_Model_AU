@@ -29,9 +29,9 @@ The model has been tested on the following environments:
         * `datetime` (for timing the simulation)
         * `importlib` (for reloading modules during development)
 * **Hardware Requirements**:
-    * **CPU**: A multi-core processor is highly recommended to take advantage of parallel processing. The runtimes noted in this document were benchmarked on a system using an **AMD Ryzen 9 7950X** (16 cores).
-    * **RAM**: Minimum 16 GB of RAM is recommended for running the full simulation.
-    * **Storage**: Approximately 500 MB of free space is needed for the output data (`All_params_results.pkl`).
+    * **CPU**: A multi-core processor is highly recommended to take advantage of parallel processing. The runtimes noted in this document were benchmarked on a system using **dual Intel Xeon Platinum 8458P processors** (88 cores / 176 threads total).
+    * **RAM**: Minimum 32 GB of RAM is recommended for running the full simulation with parallel processing.
+    * **Storage**: Approximately **3 GB** of free space is needed for the output data files (`Results_of_All_ParameterSets.pkl` and intermediate outputs).
 
 ***
 
@@ -53,12 +53,12 @@ We recommend using the **Anaconda Distribution** of Python, as it simplifies pac
     ```
 4.  **Download Project Files**: Download or clone this repository to your local machine and set it as the working directory in your IDE. The expected folder structure, including the pre-generated results file, is:
     ```
-    Doxy_PEP_Model_AU/
+    Doxy_PEP_python/
     ├── README.md
-    ├── Doxy_PEP_Simulation_0612.py
-    ├── Doxy_PEP_Simu_functions_0612.py
-    ├── Doxy_PEP_Analysis_Visualization_0612.py
-    ├── Doxy_PEP_Ana_Vis_functions_0612.py
+    ├── Doxy_PEP_Simulation_1024.py
+    ├── Doxy_PEP_Simu_functions_1024.py
+    ├── Doxy_PEP_Analysis_Visualization_1024.py
+    ├── Doxy_PEP_Ana_Vis_functions_1024.py
     ├── Data_tobe_called/
     └── Data_output/
     ```
@@ -74,18 +74,18 @@ This section provides complete instructions on how to run the provided software 
 This step runs the main individual-based model to simulate STI transmission across multiple parameter sets and intervention scenarios.
 
 * **Instructions**:
-    1.  Open `Doxy_PEP_Simulation_0612.py` in your IDE (e.g., Spyder).
+    1.  Open `Doxy_PEP_Simulation_1024.py` in your IDE (e.g., Spyder).
     2.  Run the script.
-* **Expected Output**: A single file named `All_params_results.pkl` will be created in the `Data_output/` folder. This file contains the complete results from all simulation runs.
-* **Expected Run Time**: Approximately **12-15 hours** on a high-performance desktop with an AMD Ryzen 9 7950X processor.
-* **Note**: To facilitate rapid reproduction of our results, we have provided the output file from this stage, `All_params_results.pkl`, in the `Data_output/` folder. This file was generated using the hardware specified in Section 1.
+* **Expected Output**: A single file named `Results_of_All_ParameterSets.pkl` will be created in the `Data_tobe_called/` folder. This file contains the complete results from all simulation runs.
+* **Expected Run Time**: Approximately **30 hours** on dual Intel Xeon Platinum 8458P processors (88 cores / 176 threads).
+* **Note**: To facilitate rapid reproduction of our results, we have provided the output file from this stage, `Results_of_All_ParameterSets.pkl`, in the `Data_tobe_called/` folder. This file was generated using the hardware specified in Section 1.
 
 ### **Stage 2: Generate Analysis and Visualizations**
 
 This step processes the simulation output to generate the figures and tables for the manuscript.
 
 * **Instructions**:
-    1.  Open `Doxy_PEP_Analysis_Visualization_0612.py` in your IDE.
+    1.  Open `Doxy_PEP_Analysis_Visualization_1024.py` in your IDE.
     2.  Run the script.
 * **Expected Output**:
     1.  **Saved Figures**: Four PDF files will be saved in the `Data_output/` folder (`STI_Incidence.pdf`, `NG_Resistance_Trends.pdf`, etc.).
